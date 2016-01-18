@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="list">
+		
+	</div>
+</body>
+	<script src="js/data.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		for (var i = 291; i < 307; i++) {
+			var imgUrl;
+			imgUrl = spells[data40.Powers[i].Spell];
+			$("#list").append("<img src=http://media-azeroth.cursecdn.com/wow/icons/20810/large/"+imgUrl+".jpg>");
+		};
+	</script>
+</html>
