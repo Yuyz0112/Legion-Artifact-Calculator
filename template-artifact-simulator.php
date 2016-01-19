@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>test</title>
-	<meta charset="utf-8">
-</head>
-<body>
+<?php /* Template Name: artifact */ ?>
+<?php
+
+if ( ! is_front_page() )
+	get_header(); ?>
+
 <style>
 .page-container{margin:20px;font-family:"Microsoft Yahei",Arial;-moz-user-select:none;-webkit-user-select:none}*{margin:0;padding:0}h1,h3{margin:20px;margin-top:0;color:#212121;text-align:center}.wrapper{width:740px;height:635px;margin:0 auto}.effect{text-align:left;width:740px;margin:30px auto;background:#FFF;box-shadow:0 5px 10px rgba(0,0,0,0.35),0 4px 15px rgba(0,0,0,0.33);color:#212121;padding:5px 10px}.wrapper-15{background:url(http://www.myriptide.com/artifact-simulator/img/bg15.jpg) no-repeat}.wrapper-40{background:url(http://www.myriptide.com/artifact-simulator/img/40.jpg) no-repeat}.wrapper-41{background:url(http://www.myriptide.com/artifact-simulator/img/41.jpg) no-repeat}.wrapper-42{background:url(http://www.myriptide.com/artifact-simulator/img/42.jpg) no-repeat}line{stroke:#aaaaaa;stroke-width:5px}.page-container .tooltip{position:absolute;width:200px;height:auto;font-family:"Microsoft Yahei";font-size:14px;line-height:20px;text-align:left;border:2px solid #fff;border-radius:10px;background-color:rgba(10,10,10,0.7);color:#ffeb3b;padding:5px 10px}.page-container .tooltip h3{color:#fff;font-size:16px;margin:0;text-align:left}.power,.border,.link{opacity:0.5}svg .active{opacity:1}.power[data-role="unlocked"],.border[data-role="unlocked"]{opacity:1;}
 </style>
@@ -32,5 +31,4 @@
 <script src="http://www.myriptide.com/artifact-simulator/js/d3.min.js"></script>
 <script src="http://www.myriptide.com/artifact-simulator/js/demo.min.js"></script>
 
-</body>
-</html>
+<?php if ( ! is_front_page() ) get_footer(); ?>

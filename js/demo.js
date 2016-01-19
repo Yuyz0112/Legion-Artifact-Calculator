@@ -186,24 +186,28 @@ function makeSVG(dataNum, wrapper, linkColor) {
 		}
 		/*right click*/
 		if (currentRank[i] > 0 && mouseEvent == 2) {
-			node[i] = "";
-			if (currentRank[i] > 2 + dataNum.Powers[d].MaxRank) {
-				desc = dataNum.Powers[d].Desc[dataNum.Powers[d].MaxRank]
-			} else {
-				desc = dataNum.Powers[d].Desc[currentRank[i] - 1]
-			}
-			tooltip.html("<h3>" + dataNum.Powers[d].Title + "</h3><br/>" + desc);
-			currentRank[i] -= 1;
-			var currentPower = d;
-			if (currentRank[i] == 0) {
-				if (dataNum.Powers[d].Border != 2 && d3.select(wrapper).select("#power" + d).attr("data-role") != "unlocked") {
-					d3.select(wrapper).select("#power" + d).attr("class", "power");
-					d3.select(wrapper).select("#border" + d).attr("class", "border");
+			if (d == arr[0]) {
+				resetAll(dataNum, wrapper, linkColor);
+			}else{
+				node[i] = "";
+				if (currentRank[i] > 2 + dataNum.Powers[d].MaxRank) {
+					desc = dataNum.Powers[d].Desc[dataNum.Powers[d].MaxRank]
+				} else {
+					desc = dataNum.Powers[d].Desc[currentRank[i] - 1]
 				}
-				if (currentPower!=check[0]) {check[i] = "";}
+				tooltip.html("<h3>" + dataNum.Powers[d].Title + "</h3><br/>" + desc);
+				currentRank[i] -= 1;
+				var currentPower = d;
+				if (currentRank[i] == 0) {
+					if (dataNum.Powers[d].Border != 2 && d3.select(wrapper).select("#power" + d).attr("data-role") != "unlocked") {
+						d3.select(wrapper).select("#power" + d).attr("class", "power");
+						d3.select(wrapper).select("#border" + d).attr("class", "border");
+					}
+					if (currentPower!=check[0]) {check[i] = "";}
+					renderPowers(node, check, d, i);
+					renderLinks(node);
+				}
 			}
-			renderPowers(node, check, d, i);
-			renderLinks(node);
 		}
 		/*******/
 
@@ -291,6 +295,15 @@ function makeSVG(dataNum, wrapper, linkColor) {
 				}
 			}
 		})
+	}
+
+	function resetAll(dataNum, wrapper, linkColor){
+		document.querySelector(wrapper).innerHTML = '';
+		var tooltips = document.querySelectorAll('.tooltip');
+		for (var i = 0; i < tooltips.length; i++) {
+			tooltips[i].style.display="none";
+		}
+		makeSVG(dataNum,wrapper, linkColor);
 	}
 }
 
