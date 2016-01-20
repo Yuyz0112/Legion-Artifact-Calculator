@@ -203,7 +203,6 @@ function makeSVG(dataNum, wrapper, linkColor) {
 						d3.select(wrapper).select("#power" + d).attr("class", "power");
 						d3.select(wrapper).select("#border" + d).attr("class", "border");
 					}
-					if (currentPower!=check[0]) {check[i] = "";}
 					renderPowers(node, check, d, i);
 					renderLinks(node);
 				}
