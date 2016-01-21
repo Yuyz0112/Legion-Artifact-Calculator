@@ -30,5 +30,10 @@ if ( ! is_front_page() )
 <script src="http://www.myriptide.com/artifact-simulator/js/data.js"></script>
 <script src="http://www.myriptide.com/artifact-simulator/js/d3.min.js"></script>
 <script src="http://www.myriptide.com/artifact-simulator/js/demo.min.js"></script>
+<script>
+	makeSVG(data40, ".wrapper-40", "4bd1f6");
+	makeSVG(data41, ".wrapper-41", "4bd6fb");
+	makeSVG(data42, ".wrapper-42", "04a08c");
+</script>
 
 <?php if ( ! is_front_page() ) get_footer(); ?>

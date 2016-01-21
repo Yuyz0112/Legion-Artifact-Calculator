@@ -1,8 +1,5 @@
 var width = 740;
 var height = 635;
-makeSVG(data40, ".wrapper-40", "4bd1f6");
-makeSVG(data41, ".wrapper-41", "4bd6fb");
-makeSVG(data42, ".wrapper-42", "04a08c");
 
 function makeSVG(dataNum, wrapper, linkColor) {
 	var linkColor = linkColor;
@@ -203,10 +200,11 @@ function makeSVG(dataNum, wrapper, linkColor) {
 						d3.select(wrapper).select("#power" + d).attr("class", "power");
 						d3.select(wrapper).select("#border" + d).attr("class", "border");
 					}
-					renderPowers(node, check, d, i);
-					renderLinks(node);
 				}
+				renderPowers(node, check, d, i);
+				renderLinks(node);
 			}
+			
 		}
 		/*******/
 
