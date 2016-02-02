@@ -1,6 +1,13 @@
 var width = 740;
 var height = 635;
-
+var $E = function() {
+	var c = $E.caller;
+	while (c.caller) {
+		c = c.caller
+	}
+	return c.arguments[0]
+};
+__defineGetter__("event", $E);
 function makeSVG(dataNum, wrapper, linkColor) {
 	var linkColor = linkColor;
 	var svg = d3.select(wrapper).append("svg").attr("width", width).attr("height", height);
@@ -75,14 +82,6 @@ function makeSVG(dataNum, wrapper, linkColor) {
 			return "http://www.myriptide.com/artifact-simulator/img/normal_border.png"
 		}
 	});
-	var $E = function() {
-		var c = $E.caller;
-		while (c.caller) {
-			c = c.caller
-		}
-		return c.arguments[0]
-	};
-	__defineGetter__("event", $E);
 	var powers = svg.selectAll("circle").data(arr).enter().append("circle").attr("r", 20).attr("cx", function(d) {
 		return dataNum.Powers[d].X
 	}).attr("class", function(d) {
